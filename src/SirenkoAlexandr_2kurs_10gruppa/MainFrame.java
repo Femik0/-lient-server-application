@@ -27,10 +27,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
+    private boolean turn = true;
+    private ButtonGroup radioButtons = new ButtonGroup ();
     private static final String FRAME_TITLE = "Клиент мгновенных сообщений";
 
     private static final int FRAME_MINIMUM_WIDTH = 500;
@@ -103,6 +110,32 @@ public class MainFrame extends JFrame {
             }
         });
 
+        final ButtonGroup myButtons = new ButtonGroup();
+
+        JRadioButton radio1 = new JRadioButton ("Вкл.",true);
+        myButtons.add (radio1);
+        radio1.addActionListener(new ActionListener() {
+
+
+            public void actionPerformed(ActionEvent e) {
+                if(!turn){
+                    turn = true;
+                    textAreaIncoming.append("Клиент включен" + "\n");
+                    sendButton.setEnabled(true);}
+            }
+        });
+
+        JRadioButton radio2 = new JRadioButton ("Выкл.",true);
+        myButtons.add (radio2);
+        radio2.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                if(turn){
+                    turn = false;
+                    textAreaIncoming.append("Клиент выключен" + "\n");
+                    sendButton.setEnabled(false);}
+            }
+        });
 
         // Компоновка элементов панели "Сообщение"
         final GroupLayout layout2 = new GroupLayout(messagePanel);
