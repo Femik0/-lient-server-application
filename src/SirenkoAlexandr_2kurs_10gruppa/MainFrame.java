@@ -1,12 +1,9 @@
 package SirenkoAlexandr_2kurs_10gruppa;
 
-<<<<<<< HEAD
-=======
 import java.text.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.applet.*;
->>>>>>> development
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -18,10 +15,6 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
-<<<<<<< HEAD
-=======
-
->>>>>>> development
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -33,23 +26,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-<<<<<<< HEAD
-@SuppressWarnings("serial")
-public class MainFrame extends JFrame {
-    private static final String FRAME_TITLE = "Клиент мгновенных сообщений";
-    private static final int FRAME_MINIMUM_WIDTH = 500;
-    private static final int FRAME_MINIMUM_HEIGHT = 500;
-    private static final int FROM_FIELD_DEFAULT_COLUMNS = 10;
-    private static final int TO_FIELD_DEFAULT_COLUMNS = 20;
-    private static final int INCOMING_AREA_DEFAULT_ROWS = 10;
-    private static final int OUTGOING_AREA_DEFAULT_ROWS = 5;
-    private static final int SMALL_GAP = 5;
-    private static final int MEDIUM_GAP = 10;
-    private static final int LARGE_GAP = 15;
-    private static final int SERVER_PORT = 4567;
-    private final JTextField textFieldFrom;
-    private final JTextField textFieldTo;
-=======
 import javax.swing.GroupLayout.Alignment;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -65,109 +41,55 @@ public class MainFrame extends JFrame {
 
     private static final int FRAME_MINIMUM_WIDTH = 500;
     private static final int FRAME_MINIMUM_HEIGHT = 500;
-
     private static final int FROM_FIELD_DEFAULT_COLUMNS = 10;
     private static final int TO_FIELD_DEFAULT_COLUMNS = 20;
-
     private static final int INCOMING_AREA_DEFAULT_ROWS = 10;
     private static final int OUTGOING_AREA_DEFAULT_ROWS = 5;
-
     private static final int SMALL_GAP = 5;
     private static final int MEDIUM_GAP = 10;
     private static final int LARGE_GAP = 15;
-
     private static final int SERVER_PORT = 4567;
-
     private final JTextField textFieldFrom;
     private final JTextField textFieldTo;
-
->>>>>>> development
     private final JTextArea textAreaIncoming;
     private final JTextArea textAreaOutgoing;
-
     public MainFrame() {
         super(FRAME_TITLE);
         setMinimumSize(
                 new Dimension(FRAME_MINIMUM_WIDTH, FRAME_MINIMUM_HEIGHT));
-<<<<<<< HEAD
-=======
-
-
->>>>>>> development
         // Центрирование окна
         final Toolkit kit = Toolkit.getDefaultToolkit();
         setLocation((kit.getScreenSize().width - getWidth()) / 2,
                 (kit.getScreenSize().height - getHeight()) / 2);
-<<<<<<< HEAD
-// Текстовая область для отображения полученных сообщений
-        textAreaIncoming = new JTextArea(INCOMING_AREA_DEFAULT_ROWS, 0);
-        textAreaIncoming.setEditable(false);
-// Контейнер, обеспечивающий прокрутку текстовой области
-        final JScrollPane scrollPaneIncoming =
-                new JScrollPane(textAreaIncoming);
-// Подписи полей
-        final JLabel labelFrom = new JLabel("Подпись");
-        final JLabel labelTo = new JLabel("Получатель");
-// Поля ввода имени пользователя и адреса получателя
-        textFieldFrom = new JTextField(FROM_FIELD_DEFAULT_COLUMNS);
-        textFieldTo = new JTextField(TO_FIELD_DEFAULT_COLUMNS);
-// Текстовая область для ввода сообщения
-        textAreaOutgoing = new JTextArea(OUTGOING_AREA_DEFAULT_ROWS, 0);
-// Контейнер, обеспечивающий прокрутку текстовой области
-        final JScrollPane scrollPaneOutgoing =
-                new JScrollPane(textAreaOutgoing);
-// Панель ввода сообщения
-        final JPanel messagePanel = new JPanel();
-        messagePanel.setBorder(
-                BorderFactory.createTitledBorder("Сообщение"));
-// Кнопка отправки сообщения
-        final JButton sendButton = new JButton("Отправить");
-        sendButton.addActionListener(new ActionListener() {
-=======
-
         // Текстовая область для отображения полученных сообщений
         textAreaIncoming = new JTextArea(INCOMING_AREA_DEFAULT_ROWS, 0);
         textAreaIncoming.setEditable(false);
-
         // Контейнер, обеспечивающий прокрутку текстовой области
         final JScrollPane scrollPaneIncoming =
                 new JScrollPane(textAreaIncoming);
-
         // Подписи полей
         final JLabel labelFrom = new JLabel("Подпись");
         final JLabel labelTo = new JLabel("Получатель");
-
         // Поля ввода имени пользователя и адреса получателя
         textFieldFrom = new JTextField(FROM_FIELD_DEFAULT_COLUMNS);
         textFieldTo = new JTextField(TO_FIELD_DEFAULT_COLUMNS);
-
         // Текстовая область для ввода сообщения
         textAreaOutgoing = new JTextArea(OUTGOING_AREA_DEFAULT_ROWS, 0);
-
         // Контейнер, обеспечивающий прокрутку текстовой области
         final JScrollPane scrollPaneOutgoing =
                 new JScrollPane(textAreaOutgoing);
-
         // Панель ввода сообщения
         final JPanel messagePanel = new JPanel();
         messagePanel.setBorder(
                 BorderFactory.createTitledBorder("Сообщение"));
-
         // Кнопка отправки сообщения
         final JButton sendButton = new JButton("Отправить");
         sendButton.addActionListener(new ActionListener() {
-
->>>>>>> development
             @Override
             public void actionPerformed(ActionEvent e) {
                 sendMessage();
             }
         });
-<<<<<<< HEAD
-// Компоновка элементов панели "Сообщение"
-        final GroupLayout layout2 = new GroupLayout(messagePanel);
-        messagePanel.setLayout(layout2);
-=======
 
         final ButtonGroup myButtons = new ButtonGroup();
 
@@ -199,8 +121,6 @@ public class MainFrame extends JFrame {
         // Компоновка элементов панели "Сообщение"
         final GroupLayout layout2 = new GroupLayout(messagePanel);
         messagePanel.setLayout(layout2);
-
->>>>>>> development
         layout2.setHorizontalGroup(layout2.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.TRAILING)
@@ -227,17 +147,9 @@ public class MainFrame extends JFrame {
                 .addGap(MEDIUM_GAP)
                 .addComponent(sendButton)
                 .addContainerGap());
-<<<<<<< HEAD
-// Компоновка элементов фрейма
-        final GroupLayout layout1 = new GroupLayout(getContentPane());
-        setLayout(layout1);
-=======
-
         // Компоновка элементов фрейма
         final GroupLayout layout1 = new GroupLayout(getContentPane());
         setLayout(layout1);
-
->>>>>>> development
         layout1.setHorizontalGroup(layout1.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout1.createParallelGroup()
@@ -250,69 +162,29 @@ public class MainFrame extends JFrame {
                 .addGap(MEDIUM_GAP)
                 .addComponent(messagePanel)
                 .addContainerGap());
-<<<<<<< HEAD
-// Создание и запуск потока-обработчика запросов
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    final ServerSocket serverSocket =
-                            new ServerSocket(SERVER_PORT);
-                    while (!Thread.interrupted()) {
-                        final Socket socket = serverSocket.accept();
-                        final DataInputStream in = new DataInputStream(
-                                socket.getInputStream());
-// Читаем имя отправителя
-                        final String senderName = in.readUTF();
-// Читаем сообщение
-                        final String message = in.readUTF();
-// Закрываем соединение
-                        socket.close();
-// Выделяем IP-адрес
-                        final String address =
-                                ((InetSocketAddress) socket
-                                        .getRemoteSocketAddress())
-                                        .getAddress()
-                                        .getHostAddress();
-// Выводим сообщение в текстовую область
-                        textAreaIncoming.append(senderName +
-                                " (" + address + "): " +
-                                message + "\n");
-                    }
-=======
-
         // Создание и запуск потока-обработчика запросов
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 try {
-
                     final ServerSocket serverSocket =  new ServerSocket(SERVER_PORT);
                     while (!Thread.interrupted()) {
                         final Socket socket = serverSocket.accept();
                         final DataInputStream in = new DataInputStream( socket.getInputStream());
-
                         // Читаем имя отправителя
                         final String senderName = in.readUTF();
-
                         // Читаем сообщение
                         final String message = in.readUTF();
-
                         // Закрываем соединение
                         socket.close();
-
                         // Выделяем IP-адрес
                         final String address =  ((InetSocketAddress) socket
                                 .getRemoteSocketAddress())
                                 .getAddress()
                                 .getHostAddress();
-
                         // Выводим сообщение в текстовую область
                         textAreaIncoming.append(senderName +  " (" + java.util.Calendar.getInstance().getTime() + "): " +  message + "\n");
                     }
-
->>>>>>> development
                 } catch (IOException e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(MainFrame.this,
@@ -322,19 +194,6 @@ public class MainFrame extends JFrame {
             }
         }).start();
     }
-<<<<<<< HEAD
-
-    private void sendMessage() {
-        try {
-// Получаем необходимые параметры
-            final String senderName = textFieldFrom.getText();
-            final String destinationAddress = textFieldTo.getText();
-            final String message = textAreaOutgoing.getText();
-// Убеждаемся, что поля не пустые
-            if (senderName.isEmpty()) {
-                JOptionPane.showMessageDialog(this,
-                        "Введите имя отправителя", "Ошибка",
-=======
     public boolean checkString(String string) {
         try {
             Integer.parseInt(string);
@@ -349,27 +208,17 @@ public class MainFrame extends JFrame {
             final String senderName = textFieldFrom.getText();
             final String destinationAddress = textFieldTo.getText();
             final String message = textAreaOutgoing.getText();
-
             // Убеждаемся, что поля не пустые
             if (senderName.isEmpty()) {
                 JOptionPane.showMessageDialog(this,  "Введите имя отправителя", "Ошибка",
->>>>>>> development
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (destinationAddress.isEmpty()) {
-<<<<<<< HEAD
-                JOptionPane.showMessageDialog(this,
-                        "Введите адрес узла-получателя", "Ошибка",
-                        JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-=======
                 JOptionPane.showMessageDialog(this,             "Введите адрес узла-получателя", "Ошибка",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
             String[] tokens = destinationAddress.split("\\.");
             if (tokens.length != 4) {
                 JOptionPane.showMessageDialog(this,             "Адрес узла-получателя введен некорректно", "Ошибка",
@@ -383,61 +232,33 @@ public class MainFrame extends JFrame {
                     return;
                 }
                 int i = Integer.parseInt(str);
-
                 if ((i < 0) || (i > 255)) {
                     JOptionPane.showMessageDialog(this,             "Адрес узла-получателя введен некорректно", "Ошибка",
                             JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
->>>>>>> development
             if (message.isEmpty()) {
                 JOptionPane.showMessageDialog(this,
                         "Введите текст сообщения", "Ошибка",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
-<<<<<<< HEAD
-// Создаем сокет для соединения
-            final Socket socket =
-                    new Socket(destinationAddress, SERVER_PORT);
-// Открываем поток вывода данных
-            final DataOutputStream out =
-                    new DataOutputStream(socket.getOutputStream());
-// Записываем в поток имя
-            out.writeUTF(senderName);
-// Записываем в поток сообщение
-            out.writeUTF(message);
-// Закрываем сокет
-            socket.close();
-// Помещаем сообщения в текстовую область вывода
-            textAreaIncoming.append("Я -> " + destinationAddress + ": "
-                    + message + "\n");
-// Очищаем текстовую область ввода сообщения
-=======
-
             // Создаем сокет для соединения
             final Socket socket =
                     new Socket(destinationAddress, SERVER_PORT);
-
             // Открываем поток вывода данных
             final DataOutputStream out =
                     new DataOutputStream(socket.getOutputStream());
-
             // Записываем в поток имя
             out.writeUTF(senderName);
-
             // Записываем в поток сообщение
             out.writeUTF(message);
-
             // Закрываем сокет
             socket.close();
-
             // Помещаем сообщения в текстовую область вывода
             //textAreaIncoming.append("Я -> " + destinationAddress + ": "           + message + "\n");
-
             // Очищаем текстовую область ввода сообщения
->>>>>>> development
             textAreaOutgoing.setText("");
         } catch (UnknownHostException e) {
             e.printStackTrace();
@@ -451,13 +272,8 @@ public class MainFrame extends JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-<<<<<<< HEAD
-=======
-
->>>>>>> development
             @Override
             public void run() {
                 final MainFrame frame = new MainFrame();
